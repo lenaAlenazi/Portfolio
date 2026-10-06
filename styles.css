@@ -118,7 +118,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-mark .script-accent {
-  font-family: var(--script);
+  font-family: var(--serif);
   font-weight: 400;
   color: var(--gold);
   margin-left: 4px;
@@ -132,6 +132,27 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border: 1px solid var(--hairline);
+  background: rgba(30, 32, 36, 0.35);
+  color: var(--white);
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 1px;
+  margin: 5px 0;
+  background: currentColor;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.nav.menu-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .nav-links a { opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
 .nav-links a:hover { opacity: 1; color: var(--blue); }
@@ -258,7 +279,7 @@ a { color: inherit; text-decoration: none; }
 
 .logo-last {
   display: block;
-  font-family: var(--script);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(2.2rem, 7vw, 4.6rem);
   color: #8A6F58;
@@ -842,12 +863,19 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
   pointer-events: none;
 }
 
-.show-media .img.m1 { background: linear-gradient(140deg, var(--sage) 0%, #5D6E5D 65%, #39443A 100%); }
-.show-media .img.m2 { background: linear-gradient(140deg, var(--taupe) 0%, #6B5B50 60%, #40362E 100%); }
-.show-media .img.m3 { background: linear-gradient(140deg, var(--blush) 0%, #C4A896 60%, #8D7666 100%); }
-.show-media .img.m4 { background: linear-gradient(140deg, var(--blue) 0%, #5F86A8 60%, #33465A 100%); }
-.show-media .img.m5 { background: linear-gradient(140deg, var(--warmgray) 0%, #9A9488 60%, #5B564C 100%); }
-.show-media .img.m6 { background: linear-gradient(140deg, #A9B7C4 0%, #7C8B99 55%, #47505A 100%); }
+.show-media .img { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.show-media .img.m1 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/GreenGuard_CapstoneProject_T5"); }
+.show-media .img.m2 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/Coffee-Leaf-Diseases-Classification-using-Deep-Learning-Models"); }
+.show-media .img.m3 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/VIN_PROJECT"); }
+.show-media .img.m4 {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px) 0 0 / 32px 32px,
+    radial-gradient(circle at 25% 30%, rgba(143,178,207,.85) 0 8%, transparent 9%),
+    linear-gradient(140deg, #33465A, #5F86A8 55%, #8FB2CF);
+}
+.show-media .img.m5 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/Bootcamp-SDAIA-T5"); }
+.show-media .img.m6 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/Quote-WebProject"); }
 
 .show-id {
   font-size: 0.64rem;
@@ -889,6 +917,45 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
 }
 
 .show-links a:hover { color: var(--blue); border-color: var(--blue); }
+
+/* ---------- Certifications ---------- */
+.cert-grid { display: grid; grid-template-columns: minmax(0, 720px); }
+.cert-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(24px, 4vw, 36px);
+}
+.cert-badge {
+  width: 110px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--hairline);
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--gold);
+  background: rgba(255,255,255,.04);
+}
+.cert-kicker {
+  margin-bottom: 6px;
+  font-size: .66rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.cert-card h3 {
+  font-family: var(--round);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cert-card p:last-child { color: var(--text-soft); font-size: .78rem; }
 
 /* ---------- Skills ---------- */
 .skill-columns {
@@ -1011,8 +1078,46 @@ footer .hex-row span::before {
 }
 
 @media (max-width: 640px) {
-  .nav { padding: 14px 20px; }
-  .nav-links { gap: 14px; font-size: 0.6rem; }
+  .nav { padding: 12px 18px; }
+  .nav .nav-mark { opacity: 1; pointer-events: auto; }
+  .nav-toggle { display: block; margin-left: auto; }
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 0;
+    padding: 10px 18px 18px;
+    background: rgba(30, 32, 36, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--hairline-soft);
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .nav.menu-open .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .nav-links li { border-bottom: 1px solid var(--hairline-soft); }
+  .nav-links li:last-child { border-bottom: 0; }
+  .nav-links a {
+    display: block;
+    padding: 13px 4px;
+    font-family: var(--serif);
+    font-size: 1rem;
+    letter-spacing: .08em;
+    text-transform: none;
+    opacity: .9;
+  }
+  .cert-card { grid-template-columns: 1fr; }
+  .cert-badge { width: 88px; }
   .section-head { flex-wrap: wrap; }
   .frame::before, .frame::after,
   .frame .tick::before, .frame .tick::after { display: none; }
