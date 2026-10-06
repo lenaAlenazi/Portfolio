@@ -841,13 +841,13 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
 .show-media .img {
   position: absolute;
   inset: 0;
-  filter: grayscale(1) contrast(1.05) sepia(0.12);
+  filter: none;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s;
 }
 
 .show-card:hover .show-media .img {
   transform: scale(1.07);
-  filter: grayscale(0.6) contrast(1.05) sepia(0.1);
+  filter: none;
 }
 
 /* vintage light leak on media */
@@ -858,14 +858,14 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
   background:
     radial-gradient(ellipse 60% 50% at 85% 8%, rgba(255, 205, 150, 0.3), transparent 60%),
     var(--grain);
-  mix-blend-mode: overlay;
-  opacity: 0.7;
+  mix-blend-mode: normal;
+  opacity: 0;
   pointer-events: none;
 }
 
 .show-media .img { background-position: center; background-size: cover; background-repeat: no-repeat; }
 .show-media .img.m1 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/GreenGuard_CapstoneProject_T5"); }
-.show-media .img.m2 { background-image: url("assets/CLQC.png"); background-size: contain; background-color: #201d1b; }
+.show-media .img.m2 { background-image: url("assets/CLQC.png"); background-size: cover; background-position: center; }
 .show-media .img.m3 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/VIN_PROJECT"); }
 .show-media .img.m4 {
   background:
@@ -1164,4 +1164,30 @@ footer .hex-row span::before {
 }
 @media (max-width: 640px) {
   .aws-badge-img { width: 88px; height: 88px; }
+}
+
+.show-media video.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  z-index: 1;
+}
+.show-media:has(video)::after { display: none; }
+
+.aws-cp-badge-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  display: block;
+}
+.cert-badge {
+  width: 140px;
+  min-width: 140px;
+}
+@media (max-width: 640px) {
+  .aws-cp-badge-img { width: 110px; height: 110px; }
+  .cert-badge { width: 110px; min-width: 110px; }
 }
