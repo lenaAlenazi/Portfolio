@@ -865,7 +865,7 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
 
 .show-media .img { background-position: center; background-size: cover; background-repeat: no-repeat; }
 .show-media .img.m1 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/GreenGuard_CapstoneProject_T5"); }
-.show-media .img.m2 { background-image: url("assets/coffee-leaf-paper.webp"); background-size: contain; background-color: #201d1b; }
+.show-media .img.m2 { background-image: url("assets/CLQC.png"); background-size: contain; background-color: #201d1b; }
 .show-media .img.m3 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/VIN_PROJECT"); }
 .show-media .img.m4 {
   background:
@@ -875,7 +875,7 @@ section { padding: clamp(80px, 12vw, 130px) 0; }
     linear-gradient(140deg, #33465A, #5F86A8 55%, #8FB2CF);
 }
 .show-media .img.m5 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/Bootcamp-SDAIA-T5"); }
-.show-media .img.m6 { background-image: url("https://opengraph.githubassets.com/portfolio/lenaAlenazi/Quote-WebProject"); }
+.show-media .img.m6 { background-image: url("assets/Quote.png"); background-size: cover; background-position: center; }
 
 .show-id {
   font-size: 0.64rem;
@@ -1148,4 +1148,20 @@ footer .hex-row span::before {
   .frame::before, .frame::after,
   .frame .tick::before, .frame .tick::after { display: none; }
   .hero-title { left: 24px; right: 24px; text-align: center; }
+}
+
+.project-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.aws-badge-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 640px) {
+  .aws-badge-img { width: 88px; height: 88px; }
 }
