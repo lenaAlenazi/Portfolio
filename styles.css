@@ -1268,3 +1268,11 @@ footer .hex-row span::before {
   font-size: .84rem;
   line-height: 1.65;
 }
+
+.show-media .img.m1 {
+  background-image: url("assets/greenguard.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  filter: none !important;
+}
