@@ -1276,3 +1276,11 @@ footer .hex-row span::before {
   background-repeat: no-repeat !important;
   filter: none !important;
 }
+
+.show-media .img.m4 {
+  background-image: url("assets/call-center-dashboard.png.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  filter: none !important;
+}
