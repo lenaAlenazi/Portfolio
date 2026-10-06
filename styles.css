@@ -1254,3 +1254,17 @@ footer .hex-row span::before {
     height: 140px !important;
   }
 }
+
+.show-media .img.m5 {
+  background-image: url("assets/elite-feature-importance.svg") !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff;
+}
+.show-result {
+  margin: 0 0 16px;
+  color: var(--paper);
+  font-size: .84rem;
+  line-height: 1.65;
+}
