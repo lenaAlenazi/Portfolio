@@ -13,11 +13,15 @@
 
 <nav class="nav">
   <a class="nav-mark" href="#top">Lena <span class="script-accent">Alenazi</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="primaryNav">
     <li><a href="#about">About</a></li>
     <li><a href="#timeline">Journey</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
@@ -250,7 +254,7 @@
     <div class="showcase-grid">
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m1"></div></div>
+        <div class="show-media" role="img" aria-label="GreenGuard project preview"><div class="img m1"></div></div>
         <p class="show-id">P-01 / CAPSTONE — SDAIA T5</p>
         <h3 class="show-title">GreenGuard</h3>
         <p class="show-desc">
@@ -266,7 +270,7 @@
 
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m2"></div></div>
+        <div class="show-media" role="img" aria-label="Coffee Leaf Classifier research preview"><div class="img m2"></div></div>
         <p class="show-id">P-02 / PUBLISHED RESEARCH</p>
         <h3 class="show-title">Coffee Leaf Classifier</h3>
         <p class="show-desc">
@@ -282,7 +286,7 @@
 
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m3"></div></div>
+        <div class="show-media" role="img" aria-label="VIN Store project preview"><div class="img m3"></div></div>
         <p class="show-id">P-03 / TEAM PROJECT</p>
         <h3 class="show-title">VIN Store</h3>
         <p class="show-desc">
@@ -298,7 +302,7 @@
 
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m4"></div></div>
+        <div class="show-media" role="img" aria-label="Call Center Performance Dashboard preview"><div class="img m4"></div></div>
         <p class="show-id">P-04 / DATA ANALYTICS</p>
         <h3 class="show-title">Call Center Performance Dashboard</h3>
         <p class="show-desc">
@@ -311,7 +315,7 @@
 
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m5"></div></div>
+        <div class="show-media" role="img" aria-label="Elite Training Programs machine learning project preview"><div class="img m5"></div></div>
         <p class="show-id">P-05   / TEAM PROJECT / MACHINE LEARNING</p>
         <h3 class="show-title">Elite Training Programs</h3>
         <p class="show-desc">
@@ -327,7 +331,7 @@
 
       <article class="show-card glass reveal">
         <span class="bb"><i></i><i></i><i></i><i></i></span>
-        <div class="show-media"><div class="img m6"></div></div>
+        <div class="show-media" role="img" aria-label="Quote Web Project preview"><div class="img m6"></div></div>
         <p class="show-id">P-06 / TEAM PROJECT</p>
         <h3 class="show-title">Quote Web Project</h3>
         <p class="show-desc">
@@ -345,10 +349,34 @@
 
 <div class="divider" role="presentation"></div>
 
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-index">05 / CERTIFICATIONS</span>
+      <h2 class="section-title">Credentials</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="cert-grid">
+      <article class="cert-card glass frame reveal"><span class="tick"></span>
+        <div class="cert-badge" aria-hidden="true">AWS</div>
+        <div>
+          <p class="cert-kicker">Amazon Web Services</p>
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p>Foundational AWS cloud certification covering core cloud concepts, AWS services, security, architecture, pricing, and support.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider" role="presentation"></div>
+
 <section id="skills">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="section-index">05 / SKILLS</span>
+      <span class="section-index">06 / SKILLS</span>
       <h2 class="section-title">Toolkit</h2>
       <span class="section-rule"></span>
     </div>
@@ -399,7 +427,7 @@
 <section class="connect" id="connect">
   <div class="wrap">
     <div class="connect-box glass frame reveal"><span class="tick"></span>
-      <p class="connect-eyebrow">06 / Connect</p>
+      <p class="connect-eyebrow">07 / Connect</p>
       <h2 class="connect-title">Let's talk</h2>
       <p>Open to conversations about data, machine learning, and things worth building.</p>
       <div class="connect-links">
