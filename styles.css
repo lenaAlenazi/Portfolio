@@ -1072,6 +1072,31 @@ footer .hex-row span::before {
   border: 1px solid var(--hairline);
 }
 
+/* ---------- Closing quote ---------- */
+.closing-quote {
+  padding: clamp(72px, 10vw, 130px) 0;
+  border-top: 1px solid var(--hairline-soft);
+}
+.closing-quote-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 3.5vw, 2.8rem);
+  line-height: 1.45;
+  font-weight: 400;
+}
+.closing-quote-text cite {
+  display: block;
+  margin-top: 24px;
+  font-family: var(--round);
+  font-size: .72rem;
+  font-style: normal;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; }
