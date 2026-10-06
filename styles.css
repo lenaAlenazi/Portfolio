@@ -1191,3 +1191,66 @@ footer .hex-row span::before {
   .aws-cp-badge-img { width: 110px; height: 110px; }
   .cert-badge { width: 110px; min-width: 110px; }
 }
+
+/* Media fixes */
+.show-media { background: #20262c; }
+.show-media .img {
+  filter: none !important;
+}
+.show-card:hover .show-media .img {
+  filter: none !important;
+}
+.show-media::after { display: none !important; }
+
+.show-media .img.m2 {
+  background-image: url("assets/CLQC.png");
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat;
+}
+.show-media video.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #20262c;
+  z-index: 2;
+}
+
+/* AWS credential layout */
+.cert-card {
+  grid-template-columns: 180px minmax(0, 1fr) !important;
+  gap: 32px !important;
+  align-items: center !important;
+}
+.cert-badge {
+  width: 180px !important;
+  min-width: 180px !important;
+  aspect-ratio: 1 / 1;
+}
+.aws-cp-badge-img {
+  width: 180px !important;
+  height: 180px !important;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+.cert-details {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .cert-card { grid-template-columns: 1fr !important; }
+  .cert-badge {
+    width: 140px !important;
+    min-width: 140px !important;
+  }
+  .aws-cp-badge-img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
